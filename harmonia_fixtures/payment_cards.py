@@ -50,4 +50,22 @@ token_user_info_map = {
             ),
         ),
     },
+    "wasabi-club": {
+        "test-token-5": TokenUserInfo(
+            loyalty_id="card-number-5",
+            credentials={},
+            card_information=TokenUserInfoCardInformation(
+                first_six="067457",
+                last_four="8674",
+            ),
+        ),
+        "test-token-6": TokenUserInfo(
+            loyalty_id="card-number-6",
+            credentials={},
+            card_information=TokenUserInfoCardInformation(
+                first_six="949567",
+                last_four="8519",
+            ),
+        ),
+    },
 }
