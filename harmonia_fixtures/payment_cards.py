@@ -17,7 +17,9 @@ token_user_info_map = {
     "iceland-bonus-card": {
         "test-token-1": TokenUserInfo(
             loyalty_id="card-number-1",
-            credentials={},
+            credentials={
+                "merchant_identifier": "iceland-merchant-identifer-1",
+            },
             card_information=TokenUserInfoCardInformation(
                 first_six="123456",
                 last_four="1234",
@@ -25,7 +27,9 @@ token_user_info_map = {
         ),
         "test-token-2": TokenUserInfo(
             loyalty_id="card-number-2",
-            credentials={},
+            credentials={
+                "merchant_identifier": "iceland-merchant-identifer-2",
+            },
             card_information=TokenUserInfoCardInformation(
                 first_six="789012",
                 last_four="5678",
@@ -35,7 +39,9 @@ token_user_info_map = {
     "harvey-nichols": {
         "test-token-3": TokenUserInfo(
             loyalty_id="card-number-3",
-            credentials={},
+            credentials={
+                "card_number": "hn-card-number-1",
+            },
             card_information=TokenUserInfoCardInformation(
                 first_six="098765",
                 last_four="0987",
@@ -43,7 +49,9 @@ token_user_info_map = {
         ),
         "test-token-4": TokenUserInfo(
             loyalty_id="card-number-4",
-            credentials={},
+            credentials={
+                "card_number": "hn-card-number-2",
+            },
             card_information=TokenUserInfoCardInformation(
                 first_six="432109",
                 last_four="6543",
@@ -53,7 +61,9 @@ token_user_info_map = {
     "wasabi-club": {
         "test-token-5": TokenUserInfo(
             loyalty_id="card-number-5",
-            credentials={},
+            credentials={
+                "email": "wasabi-email-1",
+            },
             card_information=TokenUserInfoCardInformation(
                 first_six="067457",
                 last_four="8674",
@@ -61,7 +71,9 @@ token_user_info_map = {
         ),
         "test-token-6": TokenUserInfo(
             loyalty_id="card-number-6",
-            credentials={},
+            credentials={
+                "email": "wasabi-email-2",
+            },
             card_information=TokenUserInfoCardInformation(
                 first_six="949567",
                 last_four="8519",
