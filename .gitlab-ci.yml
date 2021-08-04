@@ -1,37 +1,37 @@
 stages:
-  - tests
+  - test
   - build
 
 default:
-    image: binkhq/python:3.8
+  image: ghcr.io/binkhq/python:3.9
 
-complexity:
-  stage: tests
-  before_script:
-    - pip install xenon
-  script:
-    - xenon --max-average A --max-modules B --max-absolute B .
 
-style:
-  stage: tests
+test:style: &test
+  stage: test
   before_script:
-    - pip install flake8 black
+    - poetry install
   script:
-    - flake8 && black --check .
+    - poetry run flake8
+    - poetry run black --line-length 120 --check .
+    - poetry run isort --check --line-length 120 --profile black .
 
-type-check:
-  stage: tests
-  before_script:
-    - pip install mypy
+
+test:complexity:
+  <<: *test
   script:
-    - mypy --ignore-missing-imports harmonia_fixtures
+    - poetry run xenon --no-assert --max-average A --max-modules B --max-absolute B .
+
 
 build:
   stage: build
+  before_script:
+    - poetry config repositories.gitlab https://git.bink.com/api/v4/projects/${CI_PROJECT_ID}/packages/pypi
+    - poetry config http-basic.gitlab gitlab-ci-token ${CI_JOB_TOKEN}
+    - PIPX_HOME=/usr/local/lib/pipx PIPX_BIN_DIR=/usr/local/bin pipx inject poetry poetry-dynamic-versioning
+    - apt-get update
+    - apt-get install -y git
   script:
-    - pip install twine
-    - python setup.py sdist bdist
-    - twine check dist/*
-    - twine upload --non-interactive --disable-progress-bar --repository-url https://pypi.tools.bink.sh/simple/ dist/*
+    - poetry build
+    - poetry publish -r gitlab
   only:
     - tags
