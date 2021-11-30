@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "harmonia-fixtures"
-version = "1.0.0"
+version = "1.0.1"
 description = "Harmonia test fixtures"
 authors = ["Bink <bink@bink.bink>"]
 readme = "README.md"
