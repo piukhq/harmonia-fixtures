@@ -4,6 +4,8 @@ from typing import NamedTuple
 class TokenUserInfoCardInformation(NamedTuple):
     first_six: str
     last_four: str
+    expiry_year: int
+    expiry_month: int
 
 
 class TokenUserInfo(NamedTuple):
@@ -23,6 +25,8 @@ token_user_info_map = {
             card_information=TokenUserInfoCardInformation(
                 first_six="123456",
                 last_four="1234",
+                expiry_year=22,
+                expiry_month=6,
             ),
         ),
         "test-token-2": TokenUserInfo(
@@ -33,6 +37,8 @@ token_user_info_map = {
             card_information=TokenUserInfoCardInformation(
                 first_six="789012",
                 last_four="5678",
+                expiry_year=22,
+                expiry_month=5,
             ),
         ),
     },
@@ -45,6 +51,8 @@ token_user_info_map = {
             card_information=TokenUserInfoCardInformation(
                 first_six="098765",
                 last_four="0987",
+                expiry_year=22,
+                expiry_month=6,
             ),
         ),
         "test-token-4": TokenUserInfo(
@@ -55,6 +63,8 @@ token_user_info_map = {
             card_information=TokenUserInfoCardInformation(
                 first_six="432109",
                 last_four="6543",
+                expiry_year=22,
+                expiry_month=5,
             ),
         ),
     },
@@ -67,6 +77,8 @@ token_user_info_map = {
             card_information=TokenUserInfoCardInformation(
                 first_six="067457",
                 last_four="8674",
+                expiry_year=22,
+                expiry_month=6,
             ),
         ),
         "test-token-6": TokenUserInfo(
@@ -77,6 +89,8 @@ token_user_info_map = {
             card_information=TokenUserInfoCardInformation(
                 first_six="949567",
                 last_four="8519",
+                expiry_year=22,
+                expiry_month=5,
             ),
         ),
     },
