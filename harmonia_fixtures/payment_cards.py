@@ -94,4 +94,56 @@ token_user_info_map = {
             ),
         ),
     },
+    "squaremeal": {
+        "test-token-7": TokenUserInfo(
+            loyalty_id="card-number-7",
+            credentials={
+                "card_number": "squaremeal-card-number-1",
+            },
+            card_information=TokenUserInfoCardInformation(
+                first_six="776655",
+                last_four="4477",
+                expiry_year=22,
+                expiry_month=6,
+            ),
+        ),
+        "test-token-8": TokenUserInfo(
+            loyalty_id="card-number-8",
+            credentials={
+                "card_number": "squaremeal-card-number-2",
+            },
+            card_information=TokenUserInfoCardInformation(
+                first_six="776666",
+                last_four="4488",
+                expiry_year=22,
+                expiry_month=5,
+            ),
+        ),
+    },
+    "bpl-asos": {
+        "test-token-9": TokenUserInfo(
+            loyalty_id="card-number-9",
+            credentials={
+                "merchant_identifier": "asos-merchant-identifer-1",
+            },
+            card_information=TokenUserInfoCardInformation(
+                first_six="889900",
+                last_four="3344",
+                expiry_year=22,
+                expiry_month=6,
+            ),
+        ),
+        "test-token-10": TokenUserInfo(
+            loyalty_id="card-number-10",
+            credentials={
+                "merchant_identifier": "asos-merchant-identifer-2",
+            },
+            card_information=TokenUserInfoCardInformation(
+                first_six="889999",
+                last_four="3355",
+                expiry_year=22,
+                expiry_month=5,
+            ),
+        ),
+    },
 }
