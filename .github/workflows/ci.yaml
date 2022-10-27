@@ -41,6 +41,6 @@ jobs:
           python-version: "3.9"
       - run: pip install poetry
       - run: poetry config repositories.bink-pypi https://pypi.tools.uksouth.bink.sh/simple
-      - run: poetry config http-basic.bink-pypi 269fdc63-af3d-4eca-8101-8bddc22d6f14 ${{ secrets.PYPI_PASSWORD }}
+      - run: poetry config http-basic.bink-pypi c02bed7a-4224-4fb4-82ad-17499e4d0e4a ${{ secrets.PYPICLOUD_PASSWORD }}
       - run: poetry build
       - run: poetry publish -r bink-pypi
